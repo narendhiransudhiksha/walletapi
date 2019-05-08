@@ -1,5 +1,6 @@
 package com.rest.wallet.data.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,12 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /*
  * Transaction  Entity
  */
+
 @Validated
 @Entity
 @Table(name = "player_transaction")
@@ -21,10 +26,11 @@ public class Transaction {
 	@NotBlank(message = "Missing accountNumber field in the request")
 	@Column(name = "account_number", nullable = false)
 	private String accountNumber;
-	@NotBlank(message = "Missing amount field in the request")
+	@NotNull
 	@Column(name = "amount", nullable = false)
-	private String amount;
+	private BigDecimal amount;
 	@Column(name = "transaction_date", nullable = false)
+	@JsonFormat(pattern = "dd:MM:yyyy")
 	private Date transactionDate;
 	@NotBlank(message = "Missing transactionType field in the request")
 	@Column(name = "transaction_type", nullable = false)
@@ -49,7 +55,7 @@ public class Transaction {
 
 	}
 
-	public Transaction(String accountNumber, String ammount, Date transactionDate, String transactionType,
+	public Transaction(String accountNumber, BigDecimal ammount, Date transactionDate, String transactionType,
 			String transactionId, String referenceId, String comment, String status) {
 		this.accountNumber = accountNumber;
 		this.amount = ammount;
@@ -64,7 +70,7 @@ public class Transaction {
 	public Transaction(String accountNumber, String comment) {
 		this.accountNumber = accountNumber;
 		this.comment = comment;
-		;
+		
 	}
 
 	public int getId() {
@@ -83,11 +89,11 @@ public class Transaction {
 		this.accountNumber = accountNumber;
 	}
 
-	public String getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 
