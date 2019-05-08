@@ -45,7 +45,7 @@ public class AccountServiceImpl implements AccountService {
 			Boolean creditTransaction = transaction.getTransactionType().equalsIgnoreCase(Variables.CREDITTRANSACTION);
 			logger.debug(" Transaction Type : " + transaction.getTransactionType());
 			BigDecimal balanceAmount = account.getBalanceAmount();
-			BigDecimal transactionAmt = new BigDecimal(transaction.getAmount()).abs();
+			BigDecimal transactionAmt = transaction.getAmount();
 			// Convert amount to negative value if its Debit transaction
 			BigDecimal amount_for_transaction = (creditTransaction) ? transactionAmt : transactionAmt.negate();
 			// Check if there is balance amount in the account

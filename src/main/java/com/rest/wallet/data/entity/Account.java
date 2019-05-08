@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /*
  * Account Entity
  */
@@ -22,6 +24,7 @@ public class Account {
 	@Column(name = "balance_amount", nullable = false)
 	private BigDecimal balanceAmount;
 	@Column(name = "updated_date", nullable = false)
+	@JsonFormat(pattern = "dd:MM:yyyy")
 	private Date updatedDate;
 	@Column(name = "update_by", nullable = false)
 	private String updateBy;
