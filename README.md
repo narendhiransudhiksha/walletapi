@@ -1,4 +1,4 @@
-# Spring Boot (Web,H2,Swagger)
+# Spring Boot (Web,H2,Swagger & Docker)
 
     1. Download and unzip the application
     2. Build the application using 
@@ -78,3 +78,11 @@ eg: http://localhost:8080/players/accounts/100
 # Swagger UI : API Docs 
 
 http://localhost:8080/swagger-ui.html
+
+
+# Docker
+
+Run Application using Docker Hub 
+
+docker run -d -it --rm --name wallet_app -p 8080:8080 narendhiran/wallet_app:1
+
