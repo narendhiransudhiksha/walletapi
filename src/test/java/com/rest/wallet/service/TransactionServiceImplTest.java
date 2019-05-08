@@ -29,14 +29,14 @@ public class TransactionServiceImplTest {
 	
 	@Test
 	public void debitTransaction() throws TransactionException, AccountException {
-		Transaction transaction = new Transaction("111", "100", new Date(), "Debit", UUID.randomUUID().toString(), "11111", "debit", "Success");
+		Transaction transaction = new Transaction("111", new BigDecimal(100), new Date(), "Debit", UUID.randomUUID().toString(), "11111", "debit", "Success");
 		transactionService.saveTransaction(transaction);
 		BigDecimal balance = accountService.getBalanceById("111").getBalanceAmount();
 		 assertTrue(balance.doubleValue() == 100.0);
 	}
 	@Test
 	public void creditTransaction() throws TransactionException, AccountException {
-		Transaction transaction = new Transaction("111", "100", new Date(), "Credit", UUID.randomUUID().toString(), "11111", "credit", "Success");
+		Transaction transaction = new Transaction("111", new BigDecimal(100), new Date(), "Credit", UUID.randomUUID().toString(), "11111", "credit", "Success");
 		transactionService.saveTransaction(transaction);
 		BigDecimal balance = accountService.getBalanceById("111").getBalanceAmount();
 		 assertTrue(balance.doubleValue() == 200.0);
