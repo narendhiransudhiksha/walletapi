@@ -23,7 +23,7 @@ Player records
 | 300           | test user 3	| 10000.00      | 2019-04-16 10:39:48.223  |Admin      |
 
 
-    Transaction  (/v1/transactions)
+    Transaction  (/players/transactions)
 
 Debit Transaction
 
