@@ -23,13 +23,11 @@ Player records
 | 300           | test user 3	| 10000.00      | 2019-04-16 10:39:48.223  |Admin      |
 
 
-Example :
-
-    Transaction URI (/v1/transactions)
+    Transaction  (/v1/transactions)
 
 Debit Transaction
 
-eg : http://localhost:8080/players/transactions 
+http://localhost:8080/players/transactions 
 
 Request Type: Post
 
@@ -63,7 +61,7 @@ Sample Request JSON Body
     Transaction Statement URI (/players/transactions/{id}) - [{id} : AccountNumber]
     Request Type: Get
 
-eg: http://localhost:8080/players/transactions/100
+http://localhost:8080/players/transactions/100
 
 
 Account Balance
@@ -71,7 +69,7 @@ Account Balance
     Balance Request (/players/accounts/{id}) - [{id} : PlayerId]
     Request Type: Get
 
-eg: http://localhost:8080/players/accounts/100
+http://localhost:8080/players/accounts/100
 
 
 
