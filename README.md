@@ -46,6 +46,8 @@ Sample Request JSON Body
 
 Credit Transaction: 
 
+http://localhost:8080/players/transactions 
+
 Request Type: Post
 
 Sample Request JSON Body
