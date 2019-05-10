@@ -23,9 +23,7 @@ Player records
 | 300           | test user 3	| 10000.00      | 2019-04-16 10:39:48.223  |Admin      |
 
 
-Example :
-
-    Transaction URI (/v1/transactions)
+    Transaction  (/v1/transactions)
 
 Debit Transaction
 
@@ -62,7 +60,7 @@ Sample Request JSON Body
  
  Transaction History
  
-    Transaction Statement URI (/players/transactions/{id}) - [{id} : AccountNumber]
+    Transaction Statement  (/players/transactions/{id}) - [{id} : AccountNumber]
     Request Type: Get
 
 http://localhost:8080/players/transactions/100
